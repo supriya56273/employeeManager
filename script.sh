@@ -6,6 +6,7 @@ npm i # for installing all dependencies
 ng version # for getting the angular, node and cli versions
 ng serve --open # for running the realtime envoirnment at port number 4200
 npm i --save @ng-bootstrap/ng-bootstrap bootstrap font-awesome # for installing bootstrap and font-awesome
-ng g c employees # for generating new employee component
-ng g c employee # for generating new employees component
-ng g c employee-list # for generating new employee-list component
+ng g c employees # for creating new employee component
+ng g c employee # for creating new employees component
+ng g c employee-list # for creating new employee-list component
+ng g cl shared/employee --type=model # for creating model employee

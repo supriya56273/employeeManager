@@ -1,1 +1,24 @@
-<p>employee-list works!</p>
+<h4 style="margin: 5px 35% 10px 35%">Employees List</h4>
+<div class="custom-table">
+    <table class="table table-hover table-warning">
+        <thead class="bg-warning">
+            <th scope="col">EMPLOYEE CODE</th>
+            <th scope="col">Full NAME</th>
+            <th scope="col">POSITION</th>
+            <th scope="col">MOBILE NUMBER</th>
+            <th scope="col">DELETE</th>
+        </thead>
+        <tbody>
+            <tr class="table-warning" *ngFor="let emp of employeesList; let i = index">
+                <td (click)="populateForm(emp, i)">{{ emp.empCode }}</td>
+                <td (click)="populateForm(emp, i)">{{ emp.fullName }}</td>
+                <td (click)="populateForm(emp, i)">{{ emp.position }}</td>
+                <td (click)="populateForm(emp, i)">{{ emp.mobile }}</td>
+                <td>
+                    <button (click)="onDelete(emp.employeeId)" class="btn btn-sm btn-outline-danger">delete</button>
+                </td>
+            </tr>
+        </tbody>
+        <div class="container" *ngIf="employeesList.length == 0" style="margin: 40% 125%;"> No data to show. </div>
+    </table>
+</div>

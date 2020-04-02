@@ -1,1 +1,26 @@
-<p>employee works!</p>
+<form #employeeForm="ngForm" (submit)="onSubmit(employeeForm)" autocomplete="off">
+    <input type="hidden" #employeeId="ngModel" [(ngModel)]="employeeService.formData.employeeId" name="employeeId">
+    <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="fullName" #fullName="ngModel" [(ngModel)]="employeeService.formData.fullName" name="fullName" class="form-control" id="fullName" required>
+        <div class="validation-error" *ngIf="fullName.invalid && fullName.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <label for="position">Position</label>
+        <input type="position" #position="ngModel" [(ngModel)]="employeeService.formData.position" name="position" class="form-control" id="position">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="empCode">Employee Code</label>
+            <input type="empCode" #empCode="ngModel" [(ngModel)]="employeeService.formData.empCode" name="empCode" class="form-control" id="empCode" required>
+            <div class="validation-error" *ngIf="empCode.invalid && empCode.touched">This field is required.</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="mobileNumber" #mobile="ngModel" [(ngModel)]="employeeService.formData.mobile" name="mobile" class="form-control" id="mobileNumber">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="employeeForm.invalid" class="btn btn-warning btn-block">Submit</button>
+    </div>
+</form>

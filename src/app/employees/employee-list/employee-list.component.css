@@ -1,0 +1,11 @@
+.custom-table {
+    height: 250px;
+    overflow-y: scroll;
+    border: 2px solid #ffdf7e;
+    border-bottom: 30px solid #ffdf7e;
+    background-color: #ffdf7e;
+}
+
+.custom-table::-webkit-scrollbar {
+    display: none;
+}
